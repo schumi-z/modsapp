@@ -14,6 +14,11 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
+/**
+ * 
+ * @author Schumi-Z
+ *
+ */
 public class AdminLoginAction extends Action {
 	
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
@@ -37,7 +42,7 @@ public class AdminLoginAction extends Action {
 		}
 		
 		}catch (Exception e) {
-			request.setAttribute("message", "Hiba a bejelentkezéskor");
+			request.setAttribute("message", "Hiba a bejelentkezï¿½skor");
 			return mapping.findForward("error");
 		}
 		

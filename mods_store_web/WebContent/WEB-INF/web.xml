@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="WebApp_ID" version="2.5">
+  <display-name>mods_store_web</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>ModsStoreWeb</servlet-name>
+    <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+    <init-param>
+      <param-name>config</param-name>
+      <param-value>/WEB-INF/struts-config.xml</param-value>
+    </init-param>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ModsStoreWeb</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdateCartContent</display-name>
+    <servlet-name>UpdateCartContent</servlet-name>
+    <servlet-class>hu.modsstore.utility.UpdateCartContent</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateCartContent</servlet-name>
+    <url-pattern>/UpdateCartContent</url-pattern>
+  </servlet-mapping>
+  
+  <taglib>
+     <taglib-uri>/tags/struts-tiles</taglib-uri>
+      <taglib-location>/WEB-INF/lib/struts-tiles.tld</taglib-location>
+  </taglib>
+	
+  <taglib>
+  		 <taglib-uri>/tags/struts-bean</taglib-uri>
+      <taglib-location>/WEB-INF/lib/struts-bean.tld</taglib-location>
+  </taglib>
+  
+   <taglib>
+  		 <taglib-uri>/tags/struts-form</taglib-uri>
+      <taglib-location>/WEB-INF/lib/struts-form.tld</taglib-location>
+  </taglib>	
+  
+  <taglib>
+  		 <taglib-uri>/tags/struts-html</taglib-uri>
+      <taglib-location>/WEB-INF/lib/struts-html.tld</taglib-location>
+  </taglib>	
+  
+   <taglib>
+  		 <taglib-uri>/tags/struts-logic</taglib-uri>
+      <taglib-location>/WEB-INF/lib/struts-logic.tld</taglib-location>
+  </taglib>
+  
+  <taglib>
+    <taglib-uri>http://java.sun.com/jstl/fmt</taglib-uri>
+    <taglib-location>/WEB-INF/lib/fmt.tld</taglib-location>
+  </taglib> 
+  
+  <filter>
+	<filter-name>AuthenticationFilter</filter-name>
+	<filter-class>hu.modsstore.controller.filter.AuthenticationFilter
+	</filter-class>
+  </filter>
+  
+  <filter>
+	<filter-name>EncodingFilter</filter-name>
+	<filter-class>hu.modsstore.controller.filter.EncodingFilter
+	</filter-class>
+  </filter>
+  
+  <filter-mapping>
+	<filter-name>EncodingFilter</filter-name>
+	<url-pattern>*.do</url-pattern>
+  </filter-mapping>
+
+  <filter-mapping>
+	<filter-name>AuthenticationFilter</filter-name>
+	
+	<url-pattern>/adminpage.do</url-pattern>
+	
+	<url-pattern>/meretekadmin.do</url-pattern>
+	<url-pattern>/ujmeretform.do</url-pattern>
+	<url-pattern>/ujmeret.do</url-pattern>
+	<url-pattern>/torolmeret.do</url-pattern>
+	
+	<url-pattern>/tipusokadmin.do</url-pattern>
+	<url-pattern>/ujtipusform.do</url-pattern>
+	<url-pattern>/ujtipus.do</url-pattern>
+	<url-pattern>/toroltipus.do</url-pattern>
+	
+	<url-pattern>/markakadmin.do</url-pattern>
+	<url-pattern>/ujmarkaform.do</url-pattern>
+	<url-pattern>/ujmarka.do</url-pattern>
+	<url-pattern>/torolmarka.do</url-pattern>
+	
+	<url-pattern>/termekekadmin.do</url-pattern>
+	<url-pattern>/ujtermekform.do</url-pattern>
+	<url-pattern>/ujtermek.do</url-pattern>
+	<url-pattern>/toroltermek.do</url-pattern>
+	<url-pattern>/modosittermekform.do</url-pattern>
+	<url-pattern>/modosittermek.do</url-pattern>
+	
+	<url-pattern>/raktaradmin.do</url-pattern>
+	<url-pattern>/ujraktarform.do</url-pattern>
+	<url-pattern>/ujraktar.do</url-pattern>
+	<url-pattern>/torolraktar.do</url-pattern>
+	<url-pattern>/modositraktarform.do</url-pattern>
+	<url-pattern>/modositraktar.do</url-pattern>
+	
+	
+	<url-pattern>/hirleveladmin.do</url-pattern>
+	<url-pattern>/hirlevelkuldadmin.do</url-pattern>
+	<url-pattern>/hirlevelfeliratkozottakadmin.do</url-pattern>
+	
+	<url-pattern>/rendelesekadmin.do</url-pattern>
+	<url-pattern>/teljesitettrendelesekadmnin.do</url-pattern>	
+	<url-pattern>/teljesit.do</url-pattern>
+	<url-pattern>/torolrendeles.do</url-pattern>
+  </filter-mapping>
+  
+  <error-page>
+  	<error-code>404</error-code>
+  	<location>/errorshop.jsp</location>
+  </error-page>
+  
+  <servlet>
+    <description></description>
+    <display-name>GetLatestItemServlet</display-name>
+    <servlet-name>GetLatestItemServlet</servlet-name>
+    <servlet-class>hu.modsstore.controller.servlet.GetLatestItemServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetLatestItemServlet</servlet-name>
+    <url-pattern>/GetLatestItemServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>GetNumberOfVisitorsServlet</display-name>
+    <servlet-name>GetNumberOfVisitorsServlet</servlet-name>
+    <servlet-class>hu.modsstore.controller.servlet.GetNumberOfVisitorsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetNumberOfVisitorsServlet</servlet-name>
+    <url-pattern>/GetNumberOfVisitorsServlet</url-pattern>
+  </servlet-mapping>
+  
+</web-app>

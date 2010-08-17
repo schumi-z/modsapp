@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE form-validation PUBLIC
+          "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.3.0//EN"
+          "http://jakarta.apache.org/commons/dtds/validator_1_3_0.dtd">
+
+
+
+<form-validation>
+	<formset>
+
+		<form  name="rendelesLeadasActionForm">
+				<field property="nev" depends="required,maxlength">
+					<arg key="rendeles.nev"/>
+					<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+				</field>
+				
+				
+				<field property="telszam" depends="required,mask">
+				<arg position="0" key="rendeles.telszam" />
+				<arg position="1" key="rendeles.telszamFormat" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>\+\(\d{2}\)\d{9}</var-value>
+				</var>
+			</field>
+				
+				<field property="varos" depends="required,maxlength">
+				<arg key="rendeles.varos"/>
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+				</field>
+				<field property="utca" depends="required,maxlength">
+				<arg key="rendeles.utca"/>
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+				</field>
+				<field property="hazszam" depends="required,maxlength">
+				<arg key="rendeles.hazszam"/>
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+				</field>
+				
+				<field property="emeletajto" depends="required,maxlength">
+				<arg key="rendeles.emeletajto" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+				</field>
+				
+				<field property="email" depends="required,mask">
+				<arg position="0" key="rendeles.email" />
+				<arg position="1" key="rendeles.emailFormat" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>
+						^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$
+					</var-value>
+				</var>
+			</field>
+			
+		</form>
+
+	</formset>
+</form-validation>

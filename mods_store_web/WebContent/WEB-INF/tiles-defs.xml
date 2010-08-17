@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+ <!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+       "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+
+
+<tiles-definitions>
+
+	<definition name="baseLayout" path="/tilestemplate.jsp">
+		<put name="title" value="Mod Store" />
+		<put name="header" value="/header.html" />
+		<put name="menu" value="/menu.jsp" />
+		<put name="leftbody" value="/bodyleft.jsp" />
+		<put name="body" value="/mainpage.jsp" />
+		<put name="footer" value="/footer.html" />
+	</definition>
+	
+	<definition name="mainpage" extends="baseLayout">
+		<put name="title" value="Mods Store Kezdőlap" />
+		<put name="body" value="/aktualis.jsp" />
+	</definition>
+	
+	<definition name="aktualis" extends="baseLayout">
+		<put name="title" value="Mods Store Aktuális" />
+		<put name="body" value="/aktualis.jsp" />
+	</definition>
+	
+	<definition name="boltunkrol" extends="baseLayout">
+		<put name="title" value="Mods Store Boltunkról" />
+		<put name="body" value="/boltunkrol.jsp" />
+	</definition>
+	
+	<definition name="hirek" extends="baseLayout">
+		<put name="title" value="Mods Store Hirek" />
+		<put name="body" value="/blog.jsp" />
+	</definition>
+	
+	<definition name="koncertek" extends="baseLayout">
+		<put name="title" value="Mods Store Koncertek" />
+		<put name="body" value="/koncertek.jsp" />
+	</definition>
+	
+	<definition name="linkek" extends="baseLayout">
+		<put name="title" value="Mods Store Linkek" />
+		<put name="body" value="/linkek.jsp" />
+	</definition>
+	
+	<definition name="kapcsolat" extends="baseLayout">
+		<put name="title" value="Mods Store Kapcsolat" />
+		<put name="body" value="/kapcsolat.jsp" />
+	</definition>
+	
+	<definition name="tudnivalok" extends="baseLayout">
+		<put name="title" value="Mods Store Tudnivalok" />
+		<put name="body" value="/tudnivalok.jsp" />
+	</definition>
+	
+	<definition name="adminpage" extends="baseLayout">
+		<put name="title" value="Mods Store Admin" />
+		<put name="body" value="/adminpage.jsp" />
+	</definition>
+	
+	<definition name="keszletkarbantarto" extends="baseLayout">
+		<put name="title" value="Mods Store Admin" />
+		<put name="body" value="/keszletkarbantarto.jsp" />
+	</definition>
+	
+	<definition name="markaklista" extends="baseLayout">
+		<put name="title" value="Mods Store Online Shop " />
+		<put name="body" value="/markaklista.jsp" />
+	</definition>
+	
+	
+	<definition name="underground" extends="baseLayout">
+		<put name="title" value="Mods Store UnderGround" />
+		<put name="body" value="/underground.jsp" />
+	</definition>
+	
+	<definition name="forum" extends="baseLayout">
+		<put name="title" value="Mods Store Fórum" />
+		<put name="body" value="/forum.html" />
+	</definition>
+	
+	<definition name="markaforgalmazotttipusai" extends="baseLayout">
+		<put name="title" value="Mods Store Online Shop-Tipusok" />
+		<put name="body" value="/markaforgalmazotttipusai.jsp" />
+	</definition>
+	
+	
+	<definition name="termeklista" extends="baseLayout">
+		<put name="title" value="Mods Store Online Shop-Termekek" />
+		<put name="body" value="/termeklista.jsp" />
+	</definition>
+	
+	<definition name="kosartartalom" extends="baseLayout">
+		<put name="title" value="Mods Store Kosar tartalma" />
+		<put name="body" value="/kosartartalom.jsp" />
+	</definition>
+	
+	<definition name="kasszahoz" extends="baseLayout">
+		<put name="title" value="Mods Store Rendeles leadasa" />
+		<put name="body" value="/kassza.jsp" />
+	</definition>
+	
+	<definition name="meretekadmin" extends="baseLayout">
+		<put name="title" value="Mods Store Admin - Méretek" />
+		<put name="body" value="/meretekadmin.jsp" />
+	</definition>
+	
+	<definition name="rendelesekadmin" extends="baseLayout">
+		<put name="title" value="Mods Store Admin - Rendelések" />
+		<put name="body" value="/rendelesekadmin.jsp" />
+	</definition>
+	
+	<definition name="teljesitettrendelesekadmin" extends="baseLayout">
+		<put name="title" value="Mods Store Admin - Teljesitett rendelések" />
+		<put name="body" value="/teljesitettrendelesekadmin.jsp" />
+	</definition>
+	
+	<definition name="tipusokadmin" extends="baseLayout">
+		<put name="title" value="Mods Store Admin - Típusok" />
+		<put name="body" value="/tipusokadmin.jsp" />
+	</definition>
+	
+	<definition name="markakadmin" extends="baseLayout">
+		<put name="title" value="Mods Store Admin - Márkák" />
+		<put name="body" value="/markakadmin.jsp" />
+	</definition>
+	
+	<definition name="termekekadmin" extends="baseLayout">
+		<put name="title" value="Mods Store Admin - Termékek" />
+		<put name="body" value="/termekekadmin.jsp" />
+	</definition>
+	
+	<definition name="ujtermekform" extends="baseLayout">
+		<put name="title" value="Mods Store Admin - Új termék" />
+		<put name="body" value="/ujtermekform.jsp" />
+	</definition>
+	
+	<definition name="modosittermekform" extends="baseLayout">
+		<put name="title" value="Mods Store Admin - Termék módosítása" />
+		<put name="body" value="/modosittermekform.jsp" />
+	</definition>
+	
+	<definition name="raktaradmin" extends="baseLayout">
+		<put name="title" value="Mods Store Admin - Raktár" />
+		<put name="body" value="/raktaradmin.jsp" />
+	</definition>
+	
+	<definition name="ujraktarform" extends="baseLayout">
+		<put name="title" value="Mods Store Admin - Új raktárelem" />
+		<put name="body" value="/ujraktarform.jsp" />
+	</definition>
+	
+	<definition name="modositraktarform" extends="baseLayout">
+		<put name="title" value="Mods Store Admin - Raktárelem módosítása" />
+		<put name="body" value="/modositraktarform.jsp" />
+	</definition>
+	
+	<definition name="ujmeretform" extends="baseLayout">
+		<put name="title" value="Mods Store Admin - Új méret" />
+		<put name="body" value="/ujmeretform.jsp" />
+	</definition>
+	
+	<definition name="ujtipusform" extends="baseLayout">
+		<put name="title" value="Mods Store Admin - Új típus" />
+		<put name="body" value="/ujtipusform.jsp" />
+	</definition>
+	
+	<definition name="ujmarkaform" extends="baseLayout">
+		<put name="title" value="Mods Store Admin - Új márka" />
+		<put name="body" value="/ujmarkaform.jsp" />
+	</definition>
+	
+	<definition name="error" extends="baseLayout">
+		<put name="title" value="Mods Store Admin - Sikertelen művelet" />
+		<put name="body" value="/error.jsp" />
+	</definition>
+	
+	<definition name="errorshop" extends="baseLayout">
+		<put name="title" value="Mods Store Admin - Sikertelen művelet" />
+		<put name="body" value="/errorshop.jsp" />
+	</definition>
+	
+	<definition name="modosittipusform" extends="baseLayout">
+		<put name="title" value="Mods Store Admin - Típus módosítása" />
+		<put name="body" value="/modosittipusform.jsp" />
+	</definition>
+	
+	<definition name="modositmarkaform" extends="baseLayout">
+		<put name="title" value="Mods Store Admin - Márka módosítása" />
+		<put name="body" value="/modositmarkaform.jsp" />
+	</definition>
+	
+	<!-- NOW PZ -->
+	<definition name="hirlevel" extends="baseLayout">
+		<put name="title" value="Mods Store Hírlevél" />
+		<put name="body" value="/hirlevel.jsp" />
+	</definition>
+	
+	<definition name="baratok" extends="baseLayout">
+		<put name="title" value="Mods Store Barátok" />
+		<put name="body" value="/baratok.jsp" />
+	</definition>
+	
+	<definition name="zenekarok" extends="baseLayout">
+		<put name="title" value="Mods Store Zenekarok" />
+		<put name="body" value="/zenekarok.jsp" />
+	</definition>
+	
+	
+	<definition name="hirleveladmin" extends="baseLayout">
+		<put name="title" value="Mods Store Admin - Hírlevél" />
+		<put name="body" value="/hirleveladmin.jsp" />
+	</definition>
+	
+	<definition name="hirlevelfeliratkozottakadmin" extends="baseLayout">
+		<put name="title" value="Mods Store Admin - Hírlevélre feliratkozottak listája" />
+		<put name="body" value="/hirlevelfeliratkozottakadmin.jsp" />
+	</definition>
+</tiles-definitions>

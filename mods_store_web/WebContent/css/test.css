@@ -1,0 +1,308 @@
+h1, h2, h3, h4, h5 {
+line-height:80%;
+}
+h1, h2, h3, h4 {
+font-family:tahoma,helvetica,sans-serif;
+font-size:2em;
+font-size-adjust:none;
+font-stretch:normal;
+font-style:normal;
+font-variant:normal;
+font-weight:normal;
+line-height:normal;
+}
+
+h2 {
+-moz-background-clip:border;
+-moz-background-inline-policy:continuous;
+-moz-background-origin:padding;
+background:transparent url(../images/h2.gif) no-repeat scroll 0 0;
+clear:left;
+color:black;
+font-size:1.7em;
+height:1%;
+letter-spacing:5px;
+margin:0.3em 0 0;
+padding:35px 1px 30px;
+}
+
+
+#bodyLeft {
+	background-image:url("../images/bodyleft_bg.jpg");
+	border-right: thin solid #999999;
+	
+}
+
+#separator{
+	border-bottom: 1px solid #D0D0D0;
+	padding-left: 20px;
+	font-family: sans-serif;
+	font-style: italic; 
+}
+
+
+
+#latest{
+	font-size: 8pt;
+}
+
+#latest a:hover{
+	color: gray;
+}
+
+#beviteli{
+	background-color:transparent;
+	background-image:none;
+	border:1px solid #999999;
+	color:black;
+	width:120px;
+}
+
+li, p {
+	padding-bottom: 10px;
+	font-family: sans-serif;
+	font-style: italic; 
+	text-align: justify;
+	margin-right: 30px;
+	margin-left: 30px;
+}
+
+
+li label{
+	
+	font-family: sans-serif;
+	font-style: italic; 
+	font-weight: bold;
+	
+}
+
+body {
+color:#000000;
+font-family:verdana,"trebuchet MS",helvetica,sans-serif;
+font-size:75%;
+font-size-adjust:none;
+font-style:normal;
+font-variant:normal;
+font-weight:normal;
+line-height:normal;
+text-align:left;
+}
+
+table thead tr td {
+	font-family: sans-serif;
+	font-style: italic; 
+	font-weight: bold;
+}
+
+#cartTable {
+	padding: 0;
+	margin: 0;
+}
+
+#cartTable th {
+	font: bold 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	color: #4f6b72;
+	border-right: 1px solid #C1DAD7;
+	border-bottom: 1px solid #C1DAD7;
+	border-top: 1px solid #C1DAD7;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	text-align: left;
+	padding: 6px 6px 6px 12px;
+	background: #CAE8EA url(../images/cart_header_bg.jpg) no-repeat;
+}
+
+
+#cartTable td {
+	border-right: 1px solid #C1DAD7;
+	border-bottom: 1px solid #C1DAD7;
+	background: #fff;
+	padding: 6px 6px 6px 12px;
+	color: #4f6b72;
+}
+
+
+#cartTable td.alt {
+	background: #F5FAFA;
+	color: #797268;
+}
+
+a{
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+}
+
+a:hover{
+	color: white;
+}
+
+#mainpanel {
+	background: url('../images/grad_back.jpg') scroll center top transparent;
+	background-repeat: repeat;
+	
+}
+
+#carticon {
+      width: 15px;
+      height: 15px;
+      margin-left: 10px;
+      padding: 0;
+      border: 0;
+      background: transparent url('../images/addToCart.gif') no-repeat top left;
+      text-indent: -1000em;
+      vertical-align: middle;
+      cursor: pointer; /* hand-shaped cursor */
+      cursor: hand; /* IE 5.x */
+    }
+    
+#menu a:hover{
+	/*background-color: black;*/
+	color: orange;
+}
+
+	
+/* These hieghts and widths should be edited to your images */	
+ul#imggal{
+	padding-left:0;
+	width:450px;
+	margin:0 auto;}
+.pika_main{
+	width:500px;
+	padding-right:20px;
+	margin:0 auto;}
+#imggal li{
+	margin:5px;
+	float: left;
+	border:2px solid #222;}
+
+/* thats all you NEED to edit. But continue if you'd like. */
+ul#imggal li img{position:relative;cursor:pointer;}
+.pika_main img{border:5px solid #222; width: 500px; height: 350px;}
+.pika_main{position: relative;margin:0 auto;}
+.pikachoose li{float:left;position:relative;overflow:hidden;list-style:none;}
+.pika_play{position:absolute;top:10px;right:10px;z-index:1;}
+.pika_play a{position:relative;margin-left:auto;cursor:pointer;}
+.pika_play img{border:none !important;}
+.pika_caption{width:100%;height:30px;text-align:center;}
+.pika_navigation a{font-size: 12px;color:black;text-decoration: none;}
+.pika_navigation a:hover{text-decoration: underline;}
+.pika_navigation{padding-top:10px;clear:both;text-align:center;}
+
+#popup_container {
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	min-width: 300px; /* Dialog will be no smaller than this */
+	max-width: 600px; /* Dialog will wrap after this width */
+	background: #FFF;
+	border: solid 5px #999;
+	color: #000;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+#popup_title {
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 1.75em;
+	color: #666;
+	background: #CCC url(../images/title.gif) top repeat-x;
+	border: solid 1px #FFF;
+	border-bottom: solid 1px #999;
+	cursor: default;
+	padding: 0em;
+	margin: 0em;
+}
+
+#popup_content {
+	background: 16px 16px no-repeat url(../images/info.gif);
+	padding: 1em 1.75em;
+	margin: 0em;
+}
+
+#popup_content.alert {
+	background-image: url(../images/info.gif);
+}
+
+#popup_content.confirm {
+	background-image: url(../images/important.gif);
+}
+
+#popup_content.prompt {
+	background-image: url(../images/help.gif);
+}
+
+#popup_message {
+	padding-left: 48px;
+}
+
+#popup_panel {
+	text-align: center;
+	margin: 1em 0em 0em 1em;
+}
+
+#popup_prompt {
+	margin: .5em 0em;
+}
+
+#menu{
+	margin: 0 0.3em;
+	font-family: sans-serif;
+	font-size: 10pt;
+	background:url("../images/bodyleft_bg.jpg");
+}
+
+#menu ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+
+}
+
+#menu #bottom{
+	padding-left: 100px;
+}
+
+#menu ul li{
+	float: left;
+	margin: 0 0.20em ;
+	text-align: center;
+}
+
+#menu #topmenu ul li{
+	padding-left: 35px;
+}
+
+#menu #bottommenu ul li{
+	padding-left: 23px;
+}
+
+#menu a{
+	font-weight: bold;
+	font-style: normal !important;
+}
+
+#separator p {
+	padding-bottom: 10px;
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+.submit{
+	-moz-box-shadow:0 0 8px rgba(0, 0, 0, 0.1);
+	background:-moz-linear-gradient(center top , #FFFFFF, #EEEEEE 1px, #FFFFFF 30px) repeat scroll 0 0 transparent;
+	border:1px solid #E5E5E5;
+	font:13px/100% Verdana,Tahoma,sans-serif;
+	outline:0 none;
+	padding:2px;
+	width:100px;
+}
+
+.submit:hover{   
+     background:-moz-linear-gradient(center top , #FFFFFF, blue 50px, #FFFFFF 30px) repeat scroll 0 0 transparent; 
+     } 
+
+
+

@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts-config PUBLIC
+         "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+<struts-config>
+	<form-beans>
+		<form-bean name="loginActionForm"
+			type="hu.modsstore.controller.actionform.LoginActionForm" />
+		
+		<form-bean name="rendelesLeadasActionForm"
+			type="hu.modsstore.controller.actionform.RendelesLeadasActionForm" />
+		
+		<form-bean name="ujMeretActionForm"
+			type="hu.modsstore.controller.actionform.UjMeretActionForm" />
+		
+		<form-bean name="tipusActionForm"
+			type="hu.modsstore.controller.actionform.TipusActionForm" />
+		
+		<form-bean name="markaActionForm"
+			type="hu.modsstore.controller.actionform.MarkaActionForm" />
+		
+		<form-bean name="termekActionForm"
+			type="hu.modsstore.controller.actionform.TermekActionForm" />
+		
+		<form-bean name="raktarActionForm"
+			type="hu.modsstore.controller.actionform.RaktarActionForm" />
+			
+		<form-bean name="termekFilterActionForm"
+			type="hu.modsstore.controller.actionform.TermekFilterActionForm" />
+			
+		<form-bean name="pagingform"
+			type="hu.modsstore.controller.actionform.PagingActionForm" />
+			
+		<!-- NOW PZ -->
+		
+			
+		<form-bean name="feliratkozikActionForm"
+			type="hu.modsstore.controller.actionform.FeliratkozikActionForm" />
+			
+			
+		<form-bean name="hirlevelKuldAdminActionForm"
+			type="hu.modsstore.controller.actionform.HirlevelKuldAdminActionForm" />
+			
+	</form-beans>
+	
+	<global-forwards>
+		<forward name="error" path="error"></forward>
+		
+		<forward name="errorshop" path="errorshop"></forward>
+	</global-forwards>
+	
+	<action-mappings>
+		<action path="/mainpage" type="hu.modsstore.controller.action.RedirectMainPageAction">
+			<forward name="success" path="mainpage" />
+		</action>
+		
+		<!--	Skip the visitor counter	-->
+		<action path="/underground" type="hu.modsstore.controller.action.RedirectAction">
+			<forward name="success" path="underground" />
+		</action>
+		
+		<action path="/aktualis" type="hu.modsstore.controller.action.AktualisAction">
+			<forward name="success" path="aktualis" />
+		</action>
+		
+		<action path="/boltunkrol" type="hu.modsstore.controller.action.RedirectAction">
+			<forward name="success" path="boltunkrol" />
+		</action>
+		
+		<action path="/kapcsolat" type="hu.modsstore.controller.action.RedirectAction">
+			<forward name="success" path="kapcsolat" />
+		</action>
+		
+		<action path="/hirek" type="hu.modsstore.controller.action.BlogAction">
+			<forward name="success" path="hirek" />
+		</action>
+		
+		<action path="/linkek" type="hu.modsstore.controller.action.RedirectAction">
+			<forward name="success" path="linkek" />
+		</action>
+		
+		<action path="/koncertek" type="hu.modsstore.controller.action.RedirectAction">
+			<forward name="success" path="koncertek" />
+		</action>
+		
+		<action path="/tudnivalok" type="hu.modsstore.controller.action.RedirectAction">
+			<forward name="success" path="tudnivalok" />
+		</action>
+		
+		<action path="/forum" type="hu.modsstore.controller.action.RedirectAction">
+			<forward name="success" path="forum" />
+		</action>
+		
+		<!-- NOW PZ -->
+		<action path="/hirlevel" type="hu.modsstore.controller.action.RedirectAction">
+			<forward name="success" path="hirlevel" />
+		</action>
+		
+		<action path="/baratok" type="hu.modsstore.controller.action.RedirectAction">
+			<forward name="success" path="baratok" />
+		</action>
+		
+		<action path="/zenekarok" type="hu.modsstore.controller.action.RedirectAction">
+			<forward name="success" path="zenekarok" />
+		</action>
+		
+		<action path="/feliratkozik" type="hu.modsstore.controller.action.FeliratkozikAction" name="feliratkozikActionForm" input="hirlevel">
+			<forward name="success" path="hirlevel" />
+			<forward name="fail" path="hirlevel"/>
+		</action>
+		
+		
+		<action path="/leliratkozik" type="hu.modsstore.controller.action.LeiratkozikAction">
+			<forward name="success" path="hirlevel" />
+		</action>
+		
+		<action path="/hirleveladmin" type="hu.modsstore.controller.action.RedirectAction">
+			<forward name="success" path="hirleveladmin" />
+		</action>
+		
+		
+		<action path="/hirlevelkuldadmin" type="hu.modsstore.controller.action.HirlevelKuldAdminAction" name="hirlevelKuldAdminActionForm" input="hirleveladmin">
+			<forward name="success" path="hirleveladmin" />
+		</action>
+		
+		<action path="/adminpage"
+			type="hu.modsstore.controller.action.RedirectAdminAction">
+			<forward name="success" path="keszletkarbantarto" />
+			<forward name="fail" path="adminpage" />
+		</action>
+		
+		<action path="/login" type="hu.modsstore.controller.action.AdminLoginAction"
+			name="loginActionForm">
+			<forward name="success" path="keszletkarbantarto" />
+			<forward name="fail" path="adminpage" />
+		</action>
+		
+		<action path="/logout" type="hu.modsstore.controller.action.AdminLogoutAction">
+			<forward name="success" path="adminpage" />
+		</action>
+		
+		<action path="/markak" type="hu.modsstore.controller.action.MarkakAction">
+			<forward name="success" path="markaklista" />
+		</action>
+		
+		
+		<action path="/markaforgalmazotttipusai" type="hu.modsstore.controller.action.MarkaForgalmazottTipusaiAction">
+			<forward name="success" path="markaforgalmazotttipusai" />
+		</action>
+		
+		
+		<action path="/markakaphatotermekei"
+			type="hu.modsstore.controller.action.MarkaKaphatoTermekiAction">
+			<forward name="success" path="termeklista" />
+		</action>
+		
+		<action path="/next"
+			type="hu.modsstore.controller.action.NextAction"
+			 >
+		</action>
+		
+		<action path="/back"
+			type="hu.modsstore.controller.action.BackAction"
+			 >
+		</action>
+		
+		<action path="/first"
+			type="hu.modsstore.controller.action.FirstPage"
+			 >
+		</action>
+		
+		<action path="/last"
+			type="hu.modsstore.controller.action.LastPage"
+			 >
+		</action>
+		
+		<action path="/jumtopage"
+			type="hu.modsstore.controller.action.JumpToPageAction"
+			 >
+		</action>
+		
+		<action path="/kosarbatesz" type="hu.modsstore.controller.action.KosarbaRakAction">
+			<forward name="success" path="kosartartalom" />
+		</action>
+		
+		<action path="/torol"
+			type="hu.modsstore.controller.action.TorolKosarbolAction">
+			<forward name="success" path="/kosarbatesz.do" />
+		</action>
+		
+		<action path="/kasszahoz" type="hu.modsstore.controller.action.RedirectAction">
+			<forward name="success" path="kasszahoz" />
+		</action>
+		
+		<action path="/rendelesleadas"
+			type="hu.modsstore.controller.action.RendelesLeadasAction" name="rendelesLeadasActionForm"
+			validate="true" input="kasszahoz" scope="request">
+			<forward name="success" path="kasszahoz" />
+		</action>
+		
+<!--		ub	-->
+		
+		<action path="/rendelesekadmin"
+			type="hu.modsstore.controller.action.RendelesekAdminAction">
+				<forward name="success" path="rendelesekadmin" />
+			</action>
+				
+		<action path="/teljesitettrendelesekadmin"
+			type="hu.modsstore.controller.action.TeljesitettRendelesekAdminAction" name="pagingform">
+				<forward name="success" path="teljesitettrendelesekadmin" />
+			</action>
+		
+		<action path="/meretekadmin"
+			type="hu.modsstore.controller.action.MeretekAdminAction">
+				<forward name="success" path="meretekadmin" />
+			</action>
+			
+		<action path="/ujmeret"
+			type="hu.modsstore.controller.action.UjMeretAction" name="ujMeretActionForm" input="ujmeretform">
+				<forward name="success" path="/meretekadmin.do" />
+			</action>
+			
+		<action path="/torolmeret"
+			type="hu.modsstore.controller.action.TorolMeretAction">
+				<forward name="success" path="/meretekadmin.do" />
+			</action>
+			
+		<action path="/tipusokadmin"
+			type="hu.modsstore.controller.action.TipusokAdminAction">
+				<forward name="success" path="tipusokadmin" />
+			</action>
+			
+		<action path="/ujtipus"
+			type="hu.modsstore.controller.action.UjTipusAction" name="tipusActionForm" input="ujtipusform">
+				<forward name="success" path="/tipusokadmin.do" />
+			</action>
+			
+		<action path="/toroltipus"
+			type="hu.modsstore.controller.action.TorolTipusAction">
+				<forward name="success" path="/tipusokadmin.do" />
+			</action>
+			
+		<action path="/markakadmin"
+			type="hu.modsstore.controller.action.MarkakAdminAction">
+				<forward name="success" path="markakadmin" />
+			</action>
+			
+		<action path="/ujmarka"
+			type="hu.modsstore.controller.action.UjMarkaAction" name="markaActionForm" input="ujmarkaform">
+				<forward name="success" path="/markakadmin.do" />
+			</action>
+			
+		<action path="/torolmarka"
+			type="hu.modsstore.controller.action.TorolMarkaAction">
+				<forward name="success" path="/markakadmin.do" />
+			</action>
+			
+		<action path="/termekekadmin"
+			type="hu.modsstore.controller.action.TermekekAdminAction" name="termekFilterActionForm">
+				<forward name="success" path="termekekadmin" />
+			</action>
+			
+		<action path="/ujtermekform"
+			type="hu.modsstore.controller.action.UjTermekFormAction">
+				<forward name="success" path="ujtermekform" />
+			</action>
+			
+		<action path="/ujtermek"
+			type="hu.modsstore.controller.action.UjTermekAction" name="termekActionForm" input="/ujtermekform.do">
+				<forward name="success" path="/termekekadmin.do" />
+			</action>
+			
+		<action path="/toroltermek"
+			type="hu.modsstore.controller.action.TorolTermekAction">
+				<forward name="success" path="/termekekadmin.do" />
+			</action>
+			
+		<action path="/modosittermekform"
+			type="hu.modsstore.controller.action.ModositTermekFormAction">
+				<forward name="success" path="modosittermekform" />
+			</action>
+			
+		<action path="/modosittermek"
+			type="hu.modsstore.controller.action.ModositTermekAction" name="termekActionForm">
+				<forward name="success" path="/termekekadmin.do" />
+			</action>
+		
+			
+			<action path="/raktaradmin"
+			type="hu.modsstore.controller.action.RaktarAdminAction" name="termekFilterActionForm">
+				<forward name="success" path="raktaradmin" />
+			</action>
+			
+		<action path="/ujraktarform"
+			type="hu.modsstore.controller.action.UjRaktarFormAction">
+				<forward name="success" path="ujraktarform" />
+			</action>
+			
+		<action path="/ujraktar"
+			type="hu.modsstore.controller.action.UjRaktarAction" name="raktarActionForm" input="/ujraktarform.do">
+				<forward name="success" path="/raktaradmin.do" />
+			</action>
+			
+		<action path="/torolraktar"
+			type="hu.modsstore.controller.action.TorolRaktarAction">
+				<forward name="success" path="/raktaradmin.do" />
+			</action>
+			
+		<action path="/modositraktarform"
+			type="hu.modsstore.controller.action.ModositRaktarFormAction">
+				<forward name="success" path="modositraktarform" />
+		</action>
+			
+		<action path="/modositraktar"
+			type="hu.modsstore.controller.action.ModositRaktarAction" name="raktarActionForm">
+				<forward name="success" path="/raktaradmin.do" />
+		</action>
+			
+		<action path="/ujmeretform"
+			type="hu.modsstore.controller.action.RedirectAction">
+				<forward name="success" path="ujmeretform" />
+		</action>
+			
+		<action path="/ujtipusform"
+			type="hu.modsstore.controller.action.RedirectAction">
+				<forward name="success" path="ujtipusform" />
+		</action>
+			
+		<action path="/ujmarkaform"
+			type="hu.modsstore.controller.action.RedirectAction">
+				<forward name="success" path="ujmarkaform" />
+		</action>
+		
+		<action path="/modosittipusform"
+			type="hu.modsstore.controller.action.ModositTipusFormAction">
+				<forward name="success" path="modosittipusform" />
+		</action>
+		
+		<action path="/modosittipus"
+			type="hu.modsstore.controller.action.ModositTipusAction" name="tipusActionForm">
+				<forward name="success" path="/tipusokadmin.do" />
+		</action>
+		
+		<action path="/modositmarkaform"
+			type="hu.modsstore.controller.action.ModositMarkaFormAction">
+				<forward name="success" path="modositmarkaform" />
+		</action>
+		
+		<action path="/modositmarka"
+			type="hu.modsstore.controller.action.ModositMarkaAction" name="markaActionForm">
+				<forward name="success" path="/markakadmin.do" />
+		</action>
+		
+		<action path="/teljesit"
+			type="hu.modsstore.controller.action.TeljesitAdminAction">
+				<forward name="success" path="/rendelesekadmin.do" />
+		</action>
+		
+		<action path="/torolrendeles"
+			type="hu.modsstore.controller.action.TorolRendelesAdminAction">
+				<forward name="success1" path="/rendelesekadmin.do" />
+				<forward name="success2" path="/teljesitettrendelesekadmin.do" />
+		</action>
+		
+		<action path="/hirlevelfeliratkozottakadmin"
+			type="hu.modsstore.controller.action.HirlevelFeliratkozottakAdminAction">
+				<forward name="success" path="hirlevelfeliratkozottakadmin" />
+		</action>
+	</action-mappings>
+	
+	<controller processorClass="org.apache.struts.tiles.TilesRequestProcessor" />
+	
+	<message-resources parameter="hu.modsstore.controller.action.MessageResources" />
+	
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames"
+			value="/org/apache/struts/validator/validator-rules.xml,
+	         /WEB-INF/validation.xml" />
+	</plug-in>
+	
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+	
+</struts-config>

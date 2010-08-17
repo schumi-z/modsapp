@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location" value="modsstore.properties" />
+	</bean>
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="transactionTemplate"
+		class="org.springframework.transaction.support.TransactionTemplate">
+		<property name="transactionManager" ref="transactionManager" />
+	</bean>
+
+	<!-- ...Data Source... -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName">
+			<value>${db.driver}</value>
+		</property>
+		<property name="url">
+			<value>${db.url}</value>
+		</property>
+		<property name="username">
+			<value>${db.username}</value>
+		</property>
+		<property name="password">
+			<value>${db.password}</value>
+		</property>
+	</bean>
+
+	<!-- ...Hibernate annotation based SessionFactory... -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<!-- DataSource-->
+		<property name="dataSource">
+			<ref local="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${db.dialect}</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.format_sql">false</prop>
+				<prop key="hibernate.query.factory_class">org.hibernate.hql.classic.ClassicQueryTranslatorFactory</prop>
+			</props>
+		</property>
+		<property name="annotatedClasses">
+			<list>
+				<!-- Mappings-->
+				<value>hu.modsstore.model.dto.Felhasznalo</value>
+				<value>hu.modsstore.model.dto.Szerepkor</value>
+				<value>hu.modsstore.model.dto.Termek</value>
+				<value>hu.modsstore.model.dto.Meret</value>
+				<value>hu.modsstore.model.dto.Marka</value>
+				<value>hu.modsstore.model.dto.Raktar</value>
+				<value>hu.modsstore.model.dto.Tipus</value>
+				<value>hu.modsstore.model.dto.Szamlalo</value>
+				<value>hu.modsstore.model.dto.Rendeles</value>
+				<value>hu.modsstore.model.dto.RendeltTermek</value>
+				<value>hu.modsstore.model.dto.Konstans</value>
+				<value>hu.modsstore.model.dto.Hirlevel</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- ...Services... -->
+	<bean id="konstansService" class="hu.modsstore.model.service.impl.KonstansServiceImpl"
+		autowire="byName" />
+	
+	<bean id="felhasznaloService" class="hu.modsstore.model.service.impl.FelhasznaloServiceImpl"
+		autowire="byName" />
+
+	<!-- bean id="szerepkorService"
+		class="hu.modsstore.model.service.impl.SzerepkorServiceImpl"
+		autowire="byName" /> -->
+
+	<bean id="termekService" class="hu.modsstore.model.service.impl.TermekServiceImpl"
+		autowire="byName" />
+		
+	<bean id="rendelesService" class="hu.modsstore.model.service.impl.RendelesServiceImpl"
+		autowire="byName" />
+
+	<!-- bean id="meretService" class="hu.modsstore.model.service.impl.MeretServiceImpl"
+		autowire="byName" />
+
+	<bean id="markaService"
+		class="hu.modsstore.model.service.impl.MarkaServiceImpl"
+		autowire="byName" />
+
+	<bean id="raktarService"
+		class="hu.modsstore.model.service.impl.RaktarServiceImpl"
+		autowire="byName" />
+
+	<bean id="tipusService"
+		class="hu.modsstore.model.service.impl.TipusServiceImpl"
+		autowire="byName" />		
+ -->
+
+	<!-- ...DAOs... -->
+	
+	<bean id="konstansDAO" class="hu.modsstore.model.dao.impl.KonstansDAOImpl">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="felhasznaloDAO" class="hu.modsstore.model.dao.impl.FelhasznaloDAOImpl">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="szerepkorDAO" class="hu.modsstore.model.dao.impl.SzerepkorDAOImpl">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="szamlaloDAO" class="hu.modsstore.model.dao.impl.SzamlaloDAOImpl">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="termekDAO" class="hu.modsstore.model.dao.impl.TermekDAOImpl">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="markaDAO" class="hu.modsstore.model.dao.impl.MarkaDAOImpl">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="meretDAO" class="hu.modsstore.model.dao.impl.MeretDAOImpl">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="raktarDAO" class="hu.modsstore.model.dao.impl.RaktarDAOImpl">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="tipusDAO" class="hu.modsstore.model.dao.impl.TipusDAOImpl">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="rendelesDAO" class="hu.modsstore.model.dao.impl.RendelesDAOImpl">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="rendeltTermekDAO" class="hu.modsstore.model.dao.impl.RendeltTermekDAOImpl">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="hirlevelDAO" class="hu.modsstore.model.dao.impl.HirlevelDAOImpl">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+
+</beans>
